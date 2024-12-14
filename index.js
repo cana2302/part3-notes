@@ -4,6 +4,9 @@ const morgan = require('morgan');
 
 const app = express();
 
+// Verificar archivo estatico al recibir GET
+app.use(express.static('dist'));
+
 app.use(express.json());
 //app.use(cors())
 
