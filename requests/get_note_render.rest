@@ -1,0 +1,2 @@
+// GET render server.com
+GET https://part3-notes-c8jm.onrender.com/api/notes
