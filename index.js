@@ -35,9 +35,9 @@ let notes = [
 ]
 
 // ------ GET ------
-app.get('/', (request, response) => {
+/*app.get('/', (request, response) => {
   response.send('<h1>Hello World from Render.com!</h1>')
-})
+})*/
 
 app.get('/api/notes', (request, response) => {
   response.json(notes)
