@@ -1,5 +1,6 @@
 const config = require('./utils/config')
 const express = require('express')
+require('express-async-errors') // libreria express-async-errors (try/cathc)
 const app = express()
 const cors = require('cors')
 const notesRouter = require('./controllers/notes')
