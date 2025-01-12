@@ -11,7 +11,7 @@ notesRouter.get('/:id', async (request, response) => {
   if (note) {
     response.json(note)
   } else {
-    response.status(400).end()
+    response.status(404).end()
   }
 })
 
@@ -23,8 +23,12 @@ notesRouter.post('/', async (request, response) => {
     important: body.important || false,
   })
 
-  const savedNote = await note.save()
-  response.status(201).json(savedNote)
+  if (!note.content) {
+    response.status(400).end()
+  } else {
+    const savedNote = await note.save()
+    response.status(201).json(savedNote)
+  }
 })
 
 notesRouter.delete('/:id', async (request, response) => {
